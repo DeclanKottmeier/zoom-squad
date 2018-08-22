@@ -4,31 +4,31 @@ const { Schema } = mongoose
 const animalSchema = new Schema({
     name: {
         type: String,
-        required: true
+        // required: true
     },
     type: {
       type: String,
-      required: true
+      // required: true
     },
     breed: {
       type: String,
-      required: true
+      // required: true
     },
     sex: {
       type: String,
-      required: true,
+      // required: true,
       enum: ["male", "female"] 
     },
     age: {
       type: Number,
-      required: true
+      // required: true
     },
-    goodWithCats: boolean,
-    goodWithDogs: boolean,
-    goodWithYoungKids: boolean,
-    goodWithOlderKids: boolean,
+    goodWithCats: Boolean,
+    goodWithDogs: Boolean,
+    goodWithYoungKids: Boolean,
+    goodWithOlderKids: Boolean,
 })
 
-const animalModel = mongoose.model('Animal')
+const animalModel = mongoose.model('Animal', animalSchema)
 
-module.exports = mongoose.model('Animal', animalSchema)
+module.exports = animalModel
